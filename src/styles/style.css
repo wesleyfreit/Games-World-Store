@@ -1,6 +1,236 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
+* {
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
+}
+
+body {
+    background-color: rgb(16, 17, 31);
+}
+
+/* ESTILIZAÇÃO DO LOGIN */
+.login {
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.869);
+    position: fixed;
+    display: none;
+    justify-content: center;
+}
+
+.login input,
+.login h1,
+.login div {
+    border-radius: 20px;
+    border: none;
+    color: white;
+    outline: none;
+}
+.login h1 {
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    font-size: 200%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.login input {
+    margin-bottom: 10px;
+    padding: 5px 20px;
+    color: black;
+}
+#loginInput {
+    display: none;
+}
+#loginOutput {
+    display: none;
+}
+#loginInput, #loginOutput {
+    box-shadow: 0 0 15px black;
+    padding: 20px;
+    zoom: 140%;
+    flex-direction: column;
+    background-color: rgb(36, 11, 98);
+    font-weight: bold;
+}
+
+#inputUser:focus, #inputPassword:focus {
+    box-shadow: 0 2px 1px rgb(255, 0, 0);
+}
+#loginEnterBtn, 
+#loginCloseBtn {
+    margin-top: 5px;
+    background-color: rgb(172, 30, 30);
+    transition: .2s;
+    color: white;
+}
+#loginEnterBtn:hover,
+#loginCloseBtn:hover {
+    background-color: rgb(255, 0, 0);
+
+}
+#loginEnterBtn:active,
+#loginCloseBtn:active {
+    transition: 0s;
+    background-color: rgb(125, 19, 19);
+}
+
+
+
+/* ESTILIZAÇÃO DO MENU */
+#navMenu {
+    display: flex;
+    padding: 15px;
+    background-image: linear-gradient(to right, rgb(13, 0, 44), rgb(0, 0, 0));
+    justify-content: center;
+}
+#menuInside, #menuOutside{
+    margin: 0 24px;
+    display: flex; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#menuOutside{
+    width: 970px;
+}
+#menuInside{
+    width: 150px;
+}
+#options,
+#options ul, 
+#options ul li {
+    display: flex;
+}
+#options a {
+    padding: 10px;
+    margin-top: 2.5px;
+    color: rgb(179, 179, 179);
+    text-decoration: none;
+    transition: .3s;
+    font-weight: bolder;
+    font-size:larger;
+}
+#options a:hover {
+    color: blue;
+}
+#search {
+    padding-top: 10px;
+}
+#search button, 
+#search input {
+    outline: none;
+    border: none;
+    background-color: rgb(106, 105, 115);
+    border-radius: 10px;
+    padding: 7px 10px;
+}
+#search input {
+    color: white;
+    max-width: 15vmax;
+    padding-right: 30px;
+}
+#search input:focus{
+    box-shadow: 0 1px 2px blue;
+}
+#search button {
+    position: fixed;
+    margin-left: -29px;
+    transition: .3s;
+    cursor: pointer;
+}
+#search button:hover {
+    background-color: rgb(76, 78, 90);
+}
+#search button:hover img {
+    filter: invert(100);
+}
+#user {
+    cursor: pointer;
+    padding-top: 5px;
+    direction: rtl;
+}
+#user h3 {
+    box-shadow: 0 1px 2px blue;
+    color: white;
+    padding: 5px 10px;
+    background-color: rgb(36, 11, 98);
+    position: fixed;
+    display: none;
+    margin-top: 30px;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+}
+#user:hover h3 {
+    display: inline;
+}
+#menu{
+    justify-content: space-between;
+    display:none;
+}
+#menu button{
+    background-color: transparent;
+    border: none;
+}
+#openMenu{
+    filter: invert(100);
+}
+#closeMenu{
+    filter: brightness(100);
+    display: none;
+    margin-right: 8px;
+    margin-top: 1px;
+}
+#logo {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    #menuOutside{
+        display:none;
+    }
+    #menu{
+        display:flex;
+    }
+    #menuInside{
+        width: 1120px;
+    }
+    #menuOutside {
+        flex-direction: column-reverse;
+        align-content:flex-end;
+        margin: 7vh -3px;
+        right: 5px;
+        position: absolute;
+        width: 20vh;
+        background-color: rgb(4, 4, 63);
+        padding: 0;
+
+    }
+    #options {
+        margin-top: 15px;
+        margin-right: 20px;
+
+    }
+    #options ul {
+        flex-direction: column;
+    }
+    #user {
+        align-items: center;
+        display: flex;
+        margin-bottom: 15px;
+        margin-right: 20px;
+    }
+    #user h3 {
+        display:inline;
+        position:initial;
+        background-color: transparent;
+        box-shadow: none;
+        margin-top: 0;
+        
+    }
+    #navMenu.active #menuOutside {
+        display: flex;
+    }
 }

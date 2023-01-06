@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/styles/style.css">
     <link rel="shortcut icon" href="./src/assets/icon.png" type="image/x-icon">
     <title>Games's World</title>
 </head>
 <body>
-    <main></main>
+    <main>
+
+        <div class="login">
+            <div id="loginInput">
+                <h1>Login</h1>
+                <input id="inputUser" type="text" , placeholder="Usuário">
+                <input id="inputPassword" type="password" placeholder="Senha">
+                <input id="loginEnterBtn" type="button" value="Entrar">
+            </div>
+            <div id="loginOutput">
+                <h1>Seja Bem Vindo</h1>
+                <input id="loginCloseBtn" type="button" value="Fechar">
+            </div>
+        </div>
+
+        <nav id="navMenu">
+            <div id="menuInside">
+                <div id="logo">
+                    <li>
+                        <a href="index.html">
+                            <img src="./src/assets/logo.png" alt="some text" width=100px height=50px id="logo" title="Página Inicial">
+                        </a>
+                    </li>
+                </div>
+                <div id="menu">
+                    <button id="openMenu">
+                        <img src="./src/assets/menu-icon.png" width="40px" />
+                    </button>
+                    <button id="closeMenu">
+                        <img src="./src/assets/close-menu.png" width="25px">
+                    </button>
+                </div>
+            </div>
+            <div id="menuOutside">
+                <div id="options">
+                    <ul>
+                        <li><a href="index.html" title="Página Inicial">JOGOS</a></li>
+                        <li><a href="contato.html" title="Página de Contato">CONTATO</a></li>
+                        <li><a href="sobre.html" title="Página dos Criadores">SOBRE</a></li>
+                    </ul>
+                </div>
+                <div id="search">
+                    <input id="searchBar" type="text" maxlength="20px">
+                    <button id="searchButton">
+                        <img src="./src/assets/lupa.svg" alt="lupa" height="10px" title="Busca">
+                    </button>
+                </div>
+                <div id="user">
+                    <img src="./src/assets/user.png" alt="user" height="40px" title="Usuário">
+                    <h3>Richard</h3>
+                </div>
+            </div>
+        </nav>
+
+
+    </main>
     <script type="module" src="./src/scripts/index.js"></script>
 </body>
 </html>
