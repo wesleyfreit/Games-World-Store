@@ -1,3 +1,12 @@
+:root {
+    --cor-fundo: rgb(21, 22, 41);
+    --cor-hover: rgb(255, 0, 0);
+    --cor-primaria: rgb(36, 11, 98);
+    --cor-secundaria: rgb(0, 0, 0);
+    --cor-texto: rgb(255, 255, 255);
+    --cor-sombra: rgb(168, 2, 2);
+}
+
 * {
     -webkit-tap-highlight-color: transparent;
     font-family: 'Poppins', sans-serif;
@@ -8,7 +17,7 @@
 }
 
 body {
-    background-color: rgb(16, 17, 31);
+    background-color: var(--cor-fundo);
 }
 
 /* ESTILIZAÇÃO DO LOGIN */
@@ -17,7 +26,8 @@ body {
     height: 100vh;
     place-items: center;
     background-color: rgba(0, 0, 0, 0.869);
-    position: fixed;
+    z-index: 10;
+    position:absolute;
     display: none;
     justify-content: center;
 }
@@ -27,11 +37,11 @@ body {
 .login div {
     border-radius: 20px;
     border: none;
-    color: white;
+    color: var(--cor-texto);
     outline: none;
 }
 .login h1 {
-    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    text-shadow: 1px 1px 3px var(--cor-secundaria);
     font-size: 200%;
     margin-bottom: 10px;
     text-align: center;
@@ -40,51 +50,51 @@ body {
 .login input {
     margin-bottom: 10px;
     padding: 5px 20px;
-    color: black;
+    color: var(--cor-secundaria);
 }
 #loginInput {
-    display: none;
+    display: flex;
 }
 #loginOutput {
     display: none;
 }
 #loginInput, #loginOutput {
-    box-shadow: 0 0 15px black;
+    box-shadow: 0 0 15px var(--cor-secundaria);
     padding: 20px;
     zoom: 140%;
     flex-direction: column;
-    background-color: rgb(36, 11, 98);
+    background-color: var(--cor-primaria);
     font-weight: bold;
 }
 
 #inputUser:focus, #inputPassword:focus {
-    box-shadow: 0 2px 1px rgb(255, 0, 0);
+    box-shadow: 0 2px 1px var(--cor-hover);
 }
 #loginEnterBtn, 
 #loginCloseBtn {
     margin-top: 5px;
-    background-color: rgb(172, 30, 30);
+    background-color: var(--cor-sombra);
     transition: .2s;
-    color: white;
+    color: var(--cor-texto);
+    cursor: pointer;
 }
 #loginEnterBtn:hover,
 #loginCloseBtn:hover {
-    background-color: rgb(255, 0, 0);
+    background-color: var(--cor-hover);
 
 }
 #loginEnterBtn:active,
 #loginCloseBtn:active {
     transition: 0s;
-    background-color: rgb(125, 19, 19);
+    background-color: var(--cor-sombra);
 }
-
 
 
 /* ESTILIZAÇÃO DO MENU */
 #navMenu {
     display: flex;
     padding: 15px;
-    background-image: linear-gradient(to right, rgb(13, 0, 44), rgb(0, 0, 0));
+    background-image: linear-gradient(to right, var(--cor-fundo), var(--cor-secundaria));
     justify-content: center;
 }
 #menuInside, #menuOutside{
@@ -107,14 +117,14 @@ body {
 #options a {
     padding: 10px;
     margin-top: 2.5px;
-    color: rgb(179, 179, 179);
+    color: var(--cor-texto);
     text-decoration: none;
     transition: .3s;
     font-weight: bolder;
     font-size:larger;
 }
 #options a:hover {
-    color: blue;
+    color: var(--cor-hover);
 }
 #search {
     padding-top: 10px;
@@ -128,35 +138,33 @@ body {
     padding: 7px 10px;
 }
 #search input {
-    color: white;
+    color: var(--cor-texto);
     max-width: 15vmax;
     padding-right: 30px;
 }
 #search input:focus{
-    box-shadow: 0 1px 2px blue;
+    box-shadow: 0 2px 1px var(--cor-sombra);
 }
 #search button {
     position: fixed;
-    margin-left: -29px;
+    margin-left: -30px;
     transition: .3s;
     cursor: pointer;
 }
 #search button:hover {
     background-color: rgb(76, 78, 90);
 }
-#search button:hover img {
-    filter: invert(100);
-}
+
 #user {
     cursor: pointer;
     padding-top: 5px;
     direction: rtl;
 }
 #user h3 {
-    box-shadow: 0 1px 2px blue;
-    color: white;
+    box-shadow: 0 2px 1px var(--cor-sombra);
+    color: var(--cor-texto);
     padding: 5px 10px;
-    background-color: rgb(36, 11, 98);
+    background-color: var(--cor-primaria);
     position: fixed;
     display: none;
     margin-top: 30px;
@@ -175,7 +183,7 @@ body {
     border: none;
 }
 #openMenu{
-    filter: invert(100);
+    filter:brightness(1);
 }
 #closeMenu{
     filter: brightness(100);
@@ -204,7 +212,7 @@ body {
         right: 5px;
         position: absolute;
         width: 20vh;
-        background-color: rgb(4, 4, 63);
+        background-color: var(--cor-primaria);
         padding: 0;
 
     }
